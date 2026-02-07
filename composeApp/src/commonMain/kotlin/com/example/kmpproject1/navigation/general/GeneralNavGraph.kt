@@ -27,10 +27,12 @@ fun GeneralNavGraph() {
             startDestination = GeneralDestinations.HomeScreen
         ) {
             composable<GeneralDestinations.HomeScreen> {
-                HomeScreen(onNavigateTo = { navController.navigate(it) })
+                HomeScreen(onNavigateTo = { navController.navigate(it)  })
             }
             composable<GeneralDestinations.CounterScreen> {
-                CounterScreen(onNavigateTo = {navController.navigate(it) })
+                CounterScreen(onNavigateTo = { navController.navigate(it) {
+                    popUpTo(GeneralDestinations.HomeScreen) { inclusive = true }
+                } })
             }
         }
     }
