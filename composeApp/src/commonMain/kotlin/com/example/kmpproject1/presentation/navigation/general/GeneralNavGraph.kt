@@ -1,4 +1,4 @@
-package com.example.kmpproject1.navigation.general
+package com.example.kmpproject1.presentation.navigation.general
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -6,12 +6,12 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.kmpproject1.screens.CounterScreen
-import com.example.kmpproject1.screens.HomeScreen
+import com.example.kmpproject1.presentation.screens.CounterScreen
+import com.example.kmpproject1.presentation.screens.HomeScreen
+import com.example.kmpproject1.presentation.screens.PeopleScreen
 
 @Composable
 fun GeneralNavGraph() {
@@ -29,10 +29,15 @@ fun GeneralNavGraph() {
             composable<GeneralDestinations.HomeScreen> {
                 HomeScreen(onNavigateTo = { navController.navigate(it)  })
             }
+
             composable<GeneralDestinations.CounterScreen> {
                 CounterScreen(onNavigateTo = { navController.navigate(it) {
                     popUpTo(GeneralDestinations.HomeScreen) { inclusive = true }
                 } })
+            }
+
+            composable<GeneralDestinations.PeopleScreen> {
+                PeopleScreen(onNavigateTo = { navController.navigate(it)  })
             }
         }
     }

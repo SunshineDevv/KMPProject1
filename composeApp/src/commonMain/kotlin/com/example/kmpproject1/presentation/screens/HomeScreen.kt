@@ -1,4 +1,4 @@
-package com.example.kmpproject1.screens
+package com.example.kmpproject1.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.kmpproject1.navigation.general.GeneralDestinations
+import com.example.kmpproject1.presentation.navigation.general.GeneralDestinations
 
 @Composable
 fun HomeScreen(

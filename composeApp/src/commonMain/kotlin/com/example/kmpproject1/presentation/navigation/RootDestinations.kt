@@ -1,4 +1,4 @@
-package com.example.kmpproject1.navigation
+package com.example.kmpproject1.presentation.navigation
 
 import kotlinx.serialization.Serializable
 
