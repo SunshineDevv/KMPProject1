@@ -10,11 +10,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.kmpproject1.navigation.general.GeneralDestinations
 import com.example.kmpproject1.presentation.CounterEvent
 import com.example.kmpproject1.presentation.CounterViewModel
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun CounterScreen(
     onNavigateTo: (GeneralDestinations) -> Unit,
-    vm: CounterViewModel = viewModel { CounterViewModel() }
+    vm: CounterViewModel = koinViewModel()
 ) {
     val state by vm.uiState.collectAsState()
 
