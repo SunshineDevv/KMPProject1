@@ -1,4 +1,4 @@
-package com.example.kmpproject1.presentation.screens
+package com.example.kmpproject1.presentation.screens.counterscreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -8,12 +8,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.kmpproject1.presentation.navigation.general.GeneralDestinations
 import com.example.kmpproject1.presentation.event.CounterEvent
-import com.example.kmpproject1.presentation.viewmodel.CounterViewModel
+import com.example.kmpproject1.presentation.screens.counterscreen.viewmodel.CounterViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun CounterScreen(
-    onNavigateTo: (GeneralDestinations) -> Unit,
+    onNavigateToHome: (GeneralDestinations) -> Unit,
+    onNavigateToResult: (GeneralDestinations) -> Unit,
     viewModel: CounterViewModel = koinViewModel()
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -78,7 +79,7 @@ fun CounterScreen(
 
         Button(
             modifier = Modifier.fillMaxWidth(),
-            onClick = { onNavigateTo(GeneralDestinations.PeopleScreen) }
+            onClick = { onNavigateToResult(GeneralDestinations.PeopleScreen) }
         ) {
             Text("Go to results")
         }
@@ -87,7 +88,7 @@ fun CounterScreen(
 
         OutlinedButton(
             modifier = Modifier.fillMaxWidth(),
-            onClick = { onNavigateTo(GeneralDestinations.HomeScreen) }
+            onClick = { onNavigateToHome(GeneralDestinations.HomeScreen) }
         ) {
             Text("Go to home")
         }

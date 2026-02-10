@@ -1,4 +1,4 @@
-package com.example.kmpproject1.presentation.screens
+package com.example.kmpproject1.presentation.screens.peoplescreen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,12 +20,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.kmpproject1.presentation.navigation.general.GeneralDestinations
-import com.example.kmpproject1.presentation.viewmodel.PeopleViewModel
+import com.example.kmpproject1.presentation.screens.peoplescreen.viewmodel.PeopleViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun PeopleScreen(
-    onNavigateTo: (GeneralDestinations) -> Unit,
+    onNavigateToCounter: (GeneralDestinations) -> Unit,
+    onNavigateToHome: (GeneralDestinations) -> Unit,
     viewModel: PeopleViewModel = koinViewModel()
 ) {
     val peopleList by viewModel.people.collectAsState()
@@ -76,14 +77,14 @@ fun PeopleScreen(
         ) {
             OutlinedButton(
                 modifier = Modifier.weight(1f),
-                onClick = { onNavigateTo(GeneralDestinations.CounterScreen) }
+                onClick = { onNavigateToCounter(GeneralDestinations.CounterScreen) }
             ) {
                 Text("Go to counter")
             }
 
             Button(
                 modifier = Modifier.weight(1f),
-                onClick = { onNavigateTo(GeneralDestinations.HomeScreen) }
+                onClick = { onNavigateToHome(GeneralDestinations.HomeScreen) }
             ) {
                 Text("Go to home")
             }

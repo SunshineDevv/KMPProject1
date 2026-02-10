@@ -1,11 +1,11 @@
-package com.example.kmpproject1.presentation.viewmodel
+package com.example.kmpproject1.presentation.screens.counterscreen.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.kmpproject1.domain.usecase.PeopleUseCase
+import com.example.kmpproject1.presentation.event.CounterEvent
 import com.example.kmpproject1.presentation.model.CounterUiState
 import com.example.kmpproject1.presentation.model.PersonUI
-import com.example.kmpproject1.presentation.event.CounterEvent
-import com.example.kmpproject1.domain.usecase.PeopleUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

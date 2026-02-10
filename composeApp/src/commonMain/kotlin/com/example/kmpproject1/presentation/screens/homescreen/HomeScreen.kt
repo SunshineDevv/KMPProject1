@@ -1,4 +1,4 @@
-package com.example.kmpproject1.presentation.screens
+package com.example.kmpproject1.presentation.screens.homescreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

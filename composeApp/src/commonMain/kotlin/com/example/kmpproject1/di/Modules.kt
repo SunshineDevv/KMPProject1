@@ -4,9 +4,9 @@ import com.example.kmpproject1.data.local.database.PeopleDao
 import com.example.kmpproject1.data.local.database.PeopleDatabase
 import com.example.kmpproject1.domain.repository.PeopleRepository
 import com.example.kmpproject1.data.repository.PeopleRepositoryImpl
-import com.example.kmpproject1.presentation.viewmodel.CounterViewModel
+import com.example.kmpproject1.presentation.screens.counterscreen.viewmodel.CounterViewModel
 import com.example.kmpproject1.domain.usecase.PeopleUseCase
-import com.example.kmpproject1.presentation.viewmodel.PeopleViewModel
+import com.example.kmpproject1.presentation.screens.peoplescreen.viewmodel.PeopleViewModel
 import org.koin.core.module.Module
 import org.koin.core.module.dsl.singleOf
 import org.koin.core.module.dsl.viewModelOf
